@@ -13,7 +13,7 @@ services:
      - OCTOBER_DB_DATABASE=october_cms
      - OCTOBER_DB_PASSWORD=example
     volumes:
-     - .:/var/www/html
+     - /sharedfolders/Code/wardawgz/code:/var/www/html
   mysql:
     image: mysql
     environment:
