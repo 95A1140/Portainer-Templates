@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: ${MYSQL_DATABASE_PASSWORD}
+       MYSQL_DATABASE: october
+       MYSQL_USER: october
+       MYSQL_PASSWORD: october
+
+   october:
+     image: dragontek/octobercms
+     ports:
+       - 80
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: october
+       WORDPRESS_DB_PASSWORD: october
+
+volumes:
+    db_data: /sharedfolders/Code/wardawgz/dbase
