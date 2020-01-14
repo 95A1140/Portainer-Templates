@@ -2,8 +2,6 @@ version: '2'
 services:
   web:
     image: "dragontek/octobercms"
-    ports:
-     - "80"
     depends_on:
      - mysql
     environment:
