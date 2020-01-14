@@ -3,12 +3,11 @@ services:
   web:
     image: "dragontek/octobercms"
     ports:
-     - "8080:80"
+     - "80"
     depends_on:
      - mysql
     environment:
      - OCTOBER_PLUGINS=October.Drivers;
-     - OCTOBER_DB_HOST=10.85.1.114
      - OCTOBER_DB_DRIVER=mysql
      - OCTOBER_DB_DATABASE=october_cms
      - OCTOBER_DB_PASSWORD=example
